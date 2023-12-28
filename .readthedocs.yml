@@ -5,8 +5,12 @@
 # Required
 version: 2
 formats: [htmlzip, pdf, epub]
-extensions:
-  - recommonmark
+extensions = ["myst_parser"]
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 # Set the OS, Python version and other tools you might need
 build:
