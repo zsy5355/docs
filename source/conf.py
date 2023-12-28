@@ -5,6 +5,7 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+from typing import Union
 
 project = 'docs'
 copyright = '2023, zs'
@@ -18,8 +19,6 @@ extensions = [
         'recommonmark',
         'sphinx_markdown_tables'
         ]
-
-from typing import Union
 
 
 
