@@ -6,6 +6,14 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 from typing import Union
+from unittest.mock import MagicMock
+import sys
+
+# Mock modules that are not available on Read the Docs
+MOCK_MODULES = ['recommonmark', 'sphinx_markdown_tables']
+sys.modules.update((mod_name, MagicMock()) for mod_name in MOCK_MODULES)
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.viewcode', 'recommonmark', 'sphinx_markdown_tables']
+
 
 project = 'docs'
 copyright = '2023, zs'
@@ -15,10 +23,10 @@ release = '1.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [
-        'recommonmark',
-        'sphinx_markdown_tables'
-        ]
+#extensions = [
+#        'recommonmark',
+#        'sphinx_markdown_tables'
+#        ]
 
 
 
