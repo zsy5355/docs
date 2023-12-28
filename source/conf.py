@@ -19,6 +19,7 @@ extensions = [
         'sphinx_markdown_tables'
         ]
 
+from typing import Union
 
 
 
