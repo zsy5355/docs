@@ -9,10 +9,25 @@ from typing import Union
 from unittest.mock import MagicMock
 import sys
 
+from recommonmark.parser import CommonMarkParser
+
+source_parsers = {
+    '.md': CommonMarkParser,
+}
+
+source_suffix = ['.rst', '.md']
+
 # Mock modules that are not available on Read the Docs
 MOCK_MODULES = ['recommonmark', 'sphinx_markdown_tables']
 sys.modules.update((mod_name, MagicMock()) for mod_name in MOCK_MODULES)
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.viewcode', 'recommonmark', 'sphinx_markdown_tables']
+
+extensions = ["myst_parser"]
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 
 project = 'docs'
